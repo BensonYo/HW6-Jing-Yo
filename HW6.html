@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework Assignment 6</title>
-    <script defer src="hw6.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW6 - Simple Calculator</title>
 </head>
 <body>
-    <h1>Homework Assignment 6</h1>
-    <h2>Your Name</h2>
-    
-    <section>
-        <label for="input1">Input 1:</label>
-        <input type="number" id="input1">
-        <br>
-        <label for="input2">Input 2:</label>
-        <input type="number" id="input2">
-        <br>
-        <button onclick="calculate('+')">+</button>
-        <button onclick="calculate('-')">-</button>
-        <button onclick="calculate('*')">*</button>
-        <button onclick="calculate('/')">/</button>
-        <button onclick="clearResult()">CLEAR</button>
-    </section>
-    
-    <h3>Result:</h3>
-    <p id="result"></p>
+  <h1>Homework Assignment 6</h1>
+  <h2>Benson</h2>
+  
+  <section>
+    <label for="input1">Input 1</label>
+    <input type="number" id="input1" placeholder="">
+
+    <br><br>
+
+    <label for="input2">Input 2</label>
+    <input type="number" id="input2" placeholder="">
+
+    <br><br>
+
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">*</button>
+    <button onclick="calculate('/')">/</button>
+    <button onclick="clearResult()">CLEAR</button>
+
+    <br><br>
+
+    <div id="result"></div>
+  </section>
+
+  <script src="hw6.js"></script>
 </body>
 </html>
