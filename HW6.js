@@ -1,41 +1,57 @@
-function calculate(operator) {
-    let input1 = document.getElementById("input1").value;
-    let input2 = document.getElementById("input2").value;
-    let resultDiv = document.getElementById("result");
-
-    if (input1 === "" || input2 === "") {
-        resultDiv.innerHTML = `Error: One or both inputs are empty. Please enter a number.`;
-        return;
+document.addEventListener("DOMContentLoaded", function () {
+    const input1 = document.getElementById("input1");
+    const input2 = document.getElementById("input2");
+    const resultDisplay = document.getElementById("result");
+    
+    function calculate(operation) {
+        const val1 = input1.value.trim();
+        const val2 = input2.value.trim();
+        
+        if (val1 === "" || val2 === "") {
+            resultDisplay.innerHTML = `Error: ${val1 === "" ? "Input1" : "Input2"} is empty, please enter a number.`;
+            return;
+        }
+        
+        const num1 = parseFloat(val1);
+        const num2 = parseFloat(val2);
+        
+        if (isNaN(num1) || isNaN(num2)) {
+            resultDisplay.innerHTML = "Error: Please enter valid numbers.";
+            return;
+        }
+        
+        let result;
+        switch (operation) {
+            case "add":
+                result = num1 + num2;
+                break;
+            case "subtract":
+                result = num1 - num2;
+                break;
+            case "multiply":
+                result = num1 * num2;
+                break;
+            case "divide":
+                if (num2 === 0) {
+                    resultDisplay.innerHTML = `Input1 = ${num1}<br>Input2 = ${num2}<br>Input1 / Input2 = ${num1} / ${num2} = Infinity`;
+                    return;
+                }
+                result = num1 / num2;
+                break;
+            default:
+                result = "Invalid operation";
+        }
+        
+        resultDisplay.innerHTML = `Input1 = ${num1}<br>Input2 = ${num2}<br>Result = ${result}`;
     }
-
-    let num1 = parseFloat(input1);
-    let num2 = parseFloat(input2);
-    let result;
-
-    switch (operator) {
-        case '+':
-            result = num1 + num2;
-            break;
-        case '-':
-            result = num1 - num2;
-            break;
-        case '*':
-            result = num1 * num2;
-            break;
-        case '/':
-            if (num2 === 0) {
-                resultDiv.innerHTML = `Input1 = ${num1}<br>Input2 = ${num2}<br>Input1 / Input2 = ${num1} / ${num2} = Infinity`;
-                return;
-            }
-            result = num1 / num2;
-            break;
-    }
-
-    resultDiv.innerHTML = `Input1 = ${num1}<br>Input2 = ${num2}<br>Result: ${num1} ${operator} ${num2} = ${result}`;
-}
-
-function clearResult() {
-    document.getElementById("result").innerHTML = "";
-    document.getElementById("input1").value = "";
-    document.getElementById("input2").value = "";
-}
+    
+    document.getElementById("add").addEventListener("click", () => calculate("add"));
+    document.getElementById("subtract").addEventListener("click", () => calculate("subtract"));
+    document.getElementById("multiply").addEventListener("click", () => calculate("multiply"));
+    document.getElementById("divide").addEventListener("click", () => calculate("divide"));
+    document.getElementById("clear").addEventListener("click", () => {
+        input1.value = "";
+        input2.value = "";
+        resultDisplay.innerHTML = "";
+    });
+});
