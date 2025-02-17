@@ -7,27 +7,24 @@
     <script defer src="hw6.js"></script>
 </head>
 <body>
-
     <h1>Homework Assignment 6</h1>
     <h2>Your Name</h2>
-
+    
     <section>
-        <label for="input1">Input 1</label>
+        <label for="input1">Input 1:</label>
         <input type="number" id="input1">
-
-        <label for="input2">Input 2</label>
+        <br>
+        <label for="input2">Input 2:</label>
         <input type="number" id="input2">
-
-        <div>
-            <button onclick="calculate('+')">+</button>
-            <button onclick="calculate('-')">-</button>
-            <button onclick="calculate('*')">*</button>
-            <button onclick="calculate('/')">/</button>
-            <button onclick="clearResult()">CLEAR</button>
-        </div>
-
-        <div id="result"></div>
+        <br>
+        <button onclick="calculate('+')">+</button>
+        <button onclick="calculate('-')">-</button>
+        <button onclick="calculate('*')">*</button>
+        <button onclick="calculate('/')">/</button>
+        <button onclick="clearResult()">CLEAR</button>
     </section>
-
+    
+    <h3>Result:</h3>
+    <p id="result"></p>
 </body>
 </html>
