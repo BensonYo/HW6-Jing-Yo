@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework Assignment 6</title>
+    <script defer src="hw6.js"></script>
+</head>
+<body>
+
+    <h1>Homework Assignment 6</h1>
+    <h2>Your Name</h2>
+
+    <section>
+        <label for="input1">Input 1</label>
+        <input type="number" id="input1">
+
+        <label for="input2">Input 2</label>
+        <input type="number" id="input2">
+
+        <div>
+            <button onclick="calculate('+')">+</button>
+            <button onclick="calculate('-')">-</button>
+            <button onclick="calculate('*')">*</button>
+            <button onclick="calculate('/')">/</button>
+            <button onclick="clearResult()">CLEAR</button>
+        </div>
+
+        <div id="result"></div>
+    </section>
+
+</body>
+</html>
